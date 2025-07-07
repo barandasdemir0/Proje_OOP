@@ -1,0 +1,32 @@
+﻿@using Proje_OOP.Entity @* entity klasörüne bağlanıyoruz böylelikle oradaki verilere erişebiliyoruz  *@
+@model List<Product> // buranı eriştiğimiz produkct modelini liste olarak döndürüyoruz
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CoreLayout.cshtml";
+}
+
+<h1>Ürün Sayfası</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ürün Adı</th>
+        <th>Fiyat</th>
+        <th>Stok</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var product in Model) // bu modelden gelen verileri döngüye alıyoruz
+        {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.Stock</td>
+            <td><a href="/Product/DeleteProduct/@product.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Product/UpdateProduct/@product.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+        }
+    
+</table>
+<a href="/Product/AddProduct/" class="btn btn-primary">Yeni Ürün Girişi</a>

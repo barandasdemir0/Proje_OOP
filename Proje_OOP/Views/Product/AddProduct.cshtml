@@ -1,0 +1,19 @@
+﻿@model Proje_OOP.Entity.Product // Proje_OOP.Entity klasöründeki Product modelini kullanıyoruz
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_CoreLayout.cshtml";
+}
+
+<h1>Ürün ekleme sayfası</h1>
+<form method="post">@*  yani bu şu anlama geliyor içindekiler form methodu post olduğu zaman çalışsın *@
+    @Html.Label("Ürün Adı")
+    @Html.TextBoxFor(x=>x.Name,new {@class="form-control"})
+    <br />
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.Label("Stok Sayısı")
+    @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Ürünü Ekle</button>
+</form>
