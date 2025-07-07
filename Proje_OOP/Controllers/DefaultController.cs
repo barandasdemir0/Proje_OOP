@@ -125,5 +125,44 @@ namespace Proje_OOP.Controllers
 
 
 
+
+
+
+        public IActionResult Deneme()
+        {
+            Sehirler sehirler = new Sehirler();
+            Bayrak bayrak = new Bayrak();
+            sehirler.Ad = "Kiew";
+            sehirler.Id = 1;
+            sehirler.Nufus = 100000;
+            sehirler.Ulke = "ukrayna";
+            sehirler.Renk1 = "mavi";
+            sehirler.Renk2 = "sarı";
+
+            ViewBag.v1 = sehirler.Ad;
+            ViewBag.v2 = sehirler.Id;
+            ViewBag.v3 = sehirler.Nufus;
+            ViewBag.v4 = sehirler.Ulke;
+            ViewBag.v5 = sehirler.Renk1;
+            ViewBag.v6 = sehirler.Renk2;
+            ViewBag.v7 = sehirler.Renk3;
+
+            sehirler.Ad = "Üsküp";
+            sehirler.Id = 2;
+            sehirler.Nufus = 500000;
+            sehirler.Ulke = "Makedonya";
+            sehirler.Renk1 = "Sarı";
+            sehirler.Renk2 = "kırmızı";
+            ViewBag.z1 = sehirler.Ad;
+            ViewBag.z2 = sehirler.Id;
+            ViewBag.z3 = sehirler.Nufus;
+            ViewBag.z4 = sehirler.Ulke;
+            ViewBag.z5 = sehirler.Renk1;
+            ViewBag.z6 = sehirler.Renk2;
+            ViewBag.z7 = sehirler.Renk3;
+            return View();
+        }
+
+
     }
 }
