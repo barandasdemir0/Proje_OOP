@@ -37,7 +37,7 @@ namespace Proje_OOP.Controllers
         {
             ViewBag.c = cümle();
             kullanıcı("baran");
-            return View();
+            return View(); 
         }
 
 
